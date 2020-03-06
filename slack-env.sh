@@ -1,4 +1,4 @@
-#!/bin/sh -l
+#!/bin/bash
 echo "::set-env name=SLACK_USERNAME::'GH Action - Build'"
 echo "::set-env name=SLACK_ICON::'https://octodex.github.com/images/jetpacktocat.png'"
 echo "::set-env name=SLACK_MESSAGE_SUCCESS::${{ github.repository }} build: Success :the_horns:"
