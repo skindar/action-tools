@@ -10,6 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
   steps: 
-  - uses: skindar/action-tools@master
+  # - uses: skindar/action-tools@master
+  - uses: .
 
   - run: echo $SLACK_USERNAME
