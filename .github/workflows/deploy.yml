@@ -11,4 +11,6 @@ jobs:
 
 
     - name: Get the output time
-      run: echo "The time was $time"
+      run: | 
+        echo "The time was $time" && \
+        echo $SLACK_USERNAME

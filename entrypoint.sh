@@ -1,3 +1,4 @@
 #!/bin/sh -l
-time=$(date)
 echo ::set-env name=time::$time
+echo ::set-env name=SLACK_USERNAME::GH Action - Build
+
