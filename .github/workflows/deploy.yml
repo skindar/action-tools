@@ -11,6 +11,6 @@ jobs:
 
   steps: 
   # - uses: skindar/action-tools@master
-  - uses: ./
+  - uses: ./action
 
   - run: echo $SLACK_USERNAME
