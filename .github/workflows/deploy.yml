@@ -1,0 +1,15 @@
+name: Test
+on:
+  push:
+    branches:
+    - master
+
+jobs:
+  job-to-build:
+    name: Build
+    runs-on: ubuntu-latest
+
+  steps: 
+  - uses: skindar/action-tools@master
+
+  - run: echo $SLACK_USERNAME
