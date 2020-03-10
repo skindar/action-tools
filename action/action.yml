@@ -1,5 +1,0 @@
-name: 'Setup Slack variables'
-description: 'Setup Slack variables'
-runs:
-  using: 'node12'
-  main: 'index.js'
