@@ -1,6 +1,1 @@
-echo "::set-env name=SLACK_USERNAME::'GH Action - Build' 
-::set-env name=SLACK_ICON::'https://octodex.github.com/images/jetpacktocat.png' 
-::set-env name=SLACK_MESSAGE_SUCCESS::${{ github.repository }} build: Success :the_horns: 
-::set-env name=SLACK_MESSAGE_STARTED::${{ github.repository }} build: Started :clapper: 
-::set-env name=SLACK_MESSAGE_CANCELLED::${{ github.repository }} build: Cancelled: :eyes: 
-::set-env name=SLACK_MESSAGE_FAILED::${{ github.repository }} build: Failure: :boom:"
+echo "::set-env name=SLACK_USERNAME::'GH Action - Build' ::set-env name=SLACK_ICON::https://octodex.github.com/images/jetpacktocat.png ::set-env name=SLACK_MESSAGE_SUCCESS::${{ github.repository }} build: Success :the_horns: ::set-env name=SLACK_MESSAGE_STARTED::${{ github.repository }} build: Started :clapper: ::set-env name=SLACK_MESSAGE_CANCELLED::${{ github.repository }} build: Cancelled: :eyes: ::set-env name=SLACK_MESSAGE_FAILED::${{ github.repository }} build: Failure: :boom:"
