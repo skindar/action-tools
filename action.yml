@@ -1,5 +1,9 @@
 name: 'Setup slack env'
 description: 'Setup slack env'
+inputs:
+  repository:  
+    description: 'current repository'
+    required: true
 runs:
   using: 'docker'
   image: 'Dockerfile'

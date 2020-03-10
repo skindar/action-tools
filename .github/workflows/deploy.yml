@@ -8,6 +8,8 @@ jobs:
     - name: My action
       id: hello
       uses: skindar/action-tools@master
+      with:
+        repository: ${{ github.repository }}
 
 
     - name: Get the output time
