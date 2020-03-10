@@ -1,0 +1,36 @@
+- uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+  if: always()
+  with:
+    version: '270.0.0'
+    service_account_key: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
+    export_default_credentials: true
+
+- name: Get slack token from Google secretes
+  id: secrets
+  uses: GoogleCloudPlatform/github-actions/get-secretmanager-secrets@master
+  if: always()
+  with:
+    secrets: |-
+      token:fiedietsov/SLACK_WEBHOOK
+
+- name: Setup slack token
+  if: always()
+  run: echo "::set-env name=SLACK_WEBHOOK::${{steps.secrets.outputs.token}}"
+
+- name: Setup workflow environment variables
+  if: always()
+  run: |
+    if [[ "$GITHUB_EVENT_NAME" == "release" ]]; then \
+      echo "::set-env name=_ENV::$ENV_PRODUCTION"; \
+    else 
+      echo "::set-env name=_ENV::$ENV_STAGING"; \
+    fi
+  
+
+- name: Slack message start build
+  uses: rtCamp/action-slack-notify@v2.0.0   
+  if: always()
+  env:
+    SLACK_TITLE: ${{ env._ENV }} 
+    SLACK_COLOR: '#0074D9' 
+    SLACK_MESSAGE: ${{ env.SLACK_MESSAGE_STARTED }}
