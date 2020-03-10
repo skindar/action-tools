@@ -11,7 +11,7 @@ jobs:
 
   steps: 
   # - uses: skindar/action-tools@master
-  - uses: ./action
+  - uses: action
     with:
         entrypoint: 'bash'
 
