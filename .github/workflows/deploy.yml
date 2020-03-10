@@ -9,10 +9,10 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
 
-  steps: 
-  #  - uses: skindar/action-tools@master
-    - name: My action
-      uses: ./
+    steps: 
+      - uses: skindar/action-tools@master
+      # - name: My action
+      #   uses: ./
 
 
-    - run: echo $SLACK_USERNAME
+      - run: echo $SLACK_USERNAME
